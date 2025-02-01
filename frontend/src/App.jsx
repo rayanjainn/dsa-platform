@@ -9,6 +9,8 @@ import TopicPage from "./components/TopicPage";
 import TopicTutorialPage from "./components/TopicTutorialPage";
 import TutorialPage from "./components/TutorialPage";
 import PracticePage from "./components/PracticePage";
+import DiscussionsPage from "./components/Discussions";
+import Progress from "./components/Progress";
 
 function App() {
   const [isSidebarCompressed, setIsSidebarCompressed] = useState(false);
@@ -40,11 +42,8 @@ function App() {
                   path="/practice/:topicId/:questionId"
                   element={<PracticePage />}
                 />
-                <Route path="/progress" element={<div>Progress Page</div>} />
-                <Route
-                  path="/discussions"
-                  element={<div>Discussions Page</div>}
-                />
+                <Route path="/progress" element={<Progress />} />
+                <Route path="/discussions" element={<DiscussionsPage />} />
               </Routes>
             </AnimatePresence>
           </main>

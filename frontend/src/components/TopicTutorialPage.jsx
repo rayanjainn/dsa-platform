@@ -33,28 +33,28 @@ const TopicTutorialPage = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Definition and basic structure
+            {topic.keyConcepts[0]}
           </motion.li>
           <motion.li
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
           >
-            Common operations and their time complexities
+            {topic.keyConcepts[1]}
           </motion.li>
           <motion.li
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6 }}
           >
-            Advantages and disadvantages
+            {topic.keyConcepts[2]}
           </motion.li>
           <motion.li
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8 }}
           >
-            Real-world applications
+            {topic.keyConcepts[3]}
           </motion.li>
         </ul>
       </div>

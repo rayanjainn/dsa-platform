@@ -29,22 +29,22 @@ const PracticePage = () => {
       <div className="w-1/2 pr-4">
         <h1 className="text-3xl font-bold mb-4">{question.title}</h1>
         <p className="mb-4 text-gray-300">Difficulty: {question.difficulty}</p>
-        <p className="mb-4 text-gray-300">
-          Given an array of integers nums and an integer target, return indices
-          of the two numbers such that they add up to target.
-        </p>
+        <p className="mb-4 text-gray-300">{question.description}</p>
         <h2 className="text-xl font-semibold mb-2">Examples:</h2>
         <div className="mb-4 bg-gray-800 p-4 rounded">
-          <p>
-            <strong>Input:</strong> nums = [2,7,11,15], target = 9
-          </p>
-          <p>
-            <strong>Output:</strong> [0,1]
-          </p>
-          <p>
-            <strong>Explanation:</strong> Because nums[0] + nums[1] == 9, we
-            return [0, 1].
-          </p>
+          {question.testCases.map((testCase, index) => (
+            <div key={index} className="mb-4">
+              <p>
+                <strong>Input:</strong> {testCase.input}
+              </p>
+              <p>
+                <strong>Output:</strong> {testCase.output}
+              </p>
+              <p>
+                <strong>Explanation:</strong> {testCase.explanation}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
       <div className="w-1/2 pl-4">

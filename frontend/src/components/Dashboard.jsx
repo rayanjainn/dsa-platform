@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import topicsData from "../data.json";
+import ProgressRings from "./progressRings";
+import SortingVisualizer from "./sorting/SortingVisualizer";
 
 const Dashboard = () => {
   return (
@@ -30,6 +32,7 @@ const Dashboard = () => {
           </Link>
         ))}
       </div>
+      {/* <ProgressRings /> */}
     </motion.div>
   );
 };

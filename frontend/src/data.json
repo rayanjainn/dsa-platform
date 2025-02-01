@@ -4,42 +4,58 @@
       "id": "arrays",
       "name": "Arrays",
       "progress": 60,
+      "description": "An array is a data structure consisting of a collection of elements, each identified by at least one array index or key.",
+      "keyConcepts": [
+        "Arrays are a collection of elements, each identified by an index or key.",
+        "Arrays can be used to store and manipulate data in a structured manner.",
+        "Arrays can be accessed and manipulated using their indices or keys.",
+        "Arrays can be sorted and searched using various algorithms."
+      ],
       "questions": [
         {
           "id": "two-sum",
           "title": "Two Sum",
           "difficulty": "Easy",
-          "status": "completed"
+          "status": "completed",
+          "platform": "leetcode",
+          "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.",
+          "intuition": "We can use a hash map to store the complement of each number as we iterate through the array.",
+          "timeComplexity": "O(n)",
+          "spaceComplexity": "O(n)",
+          "intuitiveCode": "def twoSum(nums, target):\n    for i in range(len(nums)):\n        for j in range(i + 1, len(nums)):\n            if nums[i] + nums[j] == target:\n                return [i, j]",
+          "optimizedCode": "def twoSum(nums, target):\n    seen = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in seen:\n            return [seen[complement], i]\n        seen[num] = i\n    return []",
+          "testCases": [
+            {
+              "input": "nums = [2,7,11,15], target = 9",
+              "output": "[0,1]",
+              "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+            },
+            {
+              "input": "nums = [3,2,4], target = 6",
+              "output": "[1,2]",
+              "explanation": "Because nums[1] + nums[2] == 6, we return [1, 2]."
+            }
+          ]
         },
         {
           "id": "best-time-to-buy-and-sell-stock",
           "title": "Best Time to Buy and Sell Stock",
           "difficulty": "Easy",
-          "status": "completed"
-        },
-        {
-          "id": "contains-duplicate",
-          "title": "Contains Duplicate",
-          "difficulty": "Easy",
-          "status": "not-attempted"
-        },
-        {
-          "id": "product-of-array-except-self",
-          "title": "Product of Array Except Self",
-          "difficulty": "Medium",
-          "status": "attempted"
-        },
-        {
-          "id": "maximum-subarray",
-          "title": "Maximum Subarray",
-          "difficulty": "Medium",
-          "status": "not-attempted"
-        },
-        {
-          "id": "minimum-window-substring",
-          "title": "Minimum Window Substring",
-          "difficulty": "Hard",
-          "status": "not-attempted"
+          "status": "completed",
+          "platform": "leetcode",
+          "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.",
+          "testCases": [
+            {
+              "input": "prices = [7,1,5,3,6,4]",
+              "output": "5",
+              "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5."
+            },
+            {
+              "input": "prices = [7,6,4,3,1]",
+              "output": "0",
+              "explanation": "In this case, no transactions are done and the max profit = 0."
+            }
+          ]
         }
       ]
     },
@@ -47,36 +63,255 @@
       "id": "trees",
       "name": "Trees",
       "progress": 30,
+      "description": "A tree is a widely used abstract data type that simulates a hierarchical tree structure, with a root value and subtrees of children with a parent node.",
+      "keyConcepts": [
+        "Trees are a collection of nodes, where each node has a parent and zero or more children.",
+        "Trees can be used to represent hierarchical relationships between data.",
+        "Trees can be traversed using various algorithms, such as depth-first search (DFS) and breadth-first search (BFS).",
+        "Trees can be balanced to ensure efficient operations."
+      ],
       "questions": [
         {
           "id": "maximum-depth-of-binary-tree",
           "title": "Maximum Depth of Binary Tree",
           "difficulty": "Easy",
-          "status": "completed"
-        },
+          "status": "completed",
+          "platform": "gfg",
+          "description": "Given the root of a binary tree, return its maximum depth. A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.",
+          "testCases": [
+            {
+              "input": "root = [3,9,20,null,null,15,7]",
+              "output": "3",
+              "explanation": "The maximum depth is 3, which is the path 3 -> 20 -> 15 or 3 -> 20 -> 7."
+            },
+            {
+              "input": "root = [1,null,2]",
+              "output": "2",
+              "explanation": "The maximum depth is 2, which is the path 1 -> 2."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "linked-lists",
+      "name": "Linked Lists",
+      "progress": 50,
+      "description": "A linked list is a data structure consisting of a sequence of nodes, where each node contains a value and a reference to the next node in the sequence.",
+      "keyConcepts": [
+        "Linked lists are a collection of nodes, where each node contains a value and a reference to the next node in the sequence.",
+        "Linked lists can be used to store and manipulate data in a structured manner.",
+        "Linked lists can be accessed and manipulated using their indices or keys.",
+        "Linked lists can be sorted and searched using various algorithms."
+      ],
+      "questions": [
         {
-          "id": "same-tree",
-          "title": "Same Tree",
+          "id": "reverse-linked-list",
+          "title": "Reverse Linked List",
           "difficulty": "Easy",
-          "status": "not-attempted"
+          "status": "completed",
+          "platform": "leetcode",
+          "description": "Given the head of a singly linked list, reverse the list, and return the reversed list.",
+          "testCases": [
+            {
+              "input": "head = [1,2,3,4,5]",
+              "output": "[5,4,3,2,1]",
+              "explanation": "The input list is [1,2,3,4,5]. After reversing the list, the output should be [5,4,3,2,1]."
+            },
+            {
+              "input": "head = [1,2]",
+              "output": "[2,1]",
+              "explanation": "The input list is [1,2]. After reversing the list, the output should be [2,1]."
+            }
+          ]
         },
         {
-          "id": "binary-tree-level-order-traversal",
-          "title": "Binary Tree Level Order Traversal",
-          "difficulty": "Medium",
-          "status": "attempted"
+          "id": "merge-two-sorted-lists",
+          "title": "Merge Two Sorted Lists",
+          "difficulty": "Easy",
+          "status": "completed",
+          "platform": "leetcode",
+          "description": "Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.",
+          "testCases": [
+            {
+              "input": "list1 = [1,2,4], list2 = [1,3,4]",
+              "output": "[1,1,2,3,4,4]",
+              "explanation": "The first list is [1,2,4] and the second list is [1,3,4]. After merging the two lists, the output should be [1,1,2,3,4,4]."
+            },
+            {
+              "input": "list1 = [1,2,4], list2 = [1,2,3,4]",
+              "output": "[1,2,2,3,4]",
+              "explanation": "The first list is [1,2,4] and the second list is [1,2,3,4]. After merging the two lists, the output should be [1,2,2,3,4]."
+            }
+          ]
         },
         {
-          "id": "construct-binary-tree-from-preorder-and-inorder-traversal",
-          "title": "Construct Binary Tree from Preorder and Inorder Traversal",
-          "difficulty": "Medium",
-          "status": "not-attempted"
+          "id": "add-two-numbers",
+          "title": "Add Two Numbers",
+          "difficulty": "Easy",
+          "status": "completed",
+          "platform": "leetcode",
+          "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.",
+          "testCases": [
+            {
+              "input": "l1 = [2,4,3], l2 = [5,6,4]",
+              "output": "[7,0,8]",
+              "explanation": "The sum of the numbers represented by the linked lists is 7. The linked lists are [2,4,3] and [5,6,4], so the output should be [7,0,8]."
+            },
+            {
+              "input": "l1 = [0], l2 = [0]",
+              "output": "[0]",
+              "explanation": "The sum of the numbers represented by the linked lists is 0. The linked lists are [0] and [0], so the output should be [0]."
+            }
+          ]
         },
         {
-          "id": "binary-tree-maximum-path-sum",
-          "title": "Binary Tree Maximum Path Sum",
-          "difficulty": "Hard",
-          "status": "not-attempted"
+          "id": "palindrome-linked-list",
+          "title": "Palindrome Linked List",
+          "difficulty": "Easy",
+          "status": "completed",
+          "platform": "leetcode",
+          "description": "Given a singly linked list, determine if it is a palindrome.",
+          "testCases": [
+            {
+              "input": "head = [1,2,2,1]",
+              "output": "true",
+              "explanation": "The input list is [1,2,2,1]. It is a palindrome because the first and last elements are the same."
+            },
+            {
+              "input": "head = [1,2]",
+              "output": "false",
+              "explanation": "The input list is [1,2]. It is not a palindrome because the first element is 1 and the last element is 2, but they are not the same."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sorting",
+      "name": "Sorting",
+      "progress": 50,
+      "description": "Sorting is the process of arranging elements in a specific order. It is a fundamental operation in computer science and is used in many applications, such as searching, data analysis, and database management.",
+      "keyConcepts": [
+        "Sorting is a process of arranging elements in a specific order.",
+        "Sorting can be done using different algorithms, such as bubble sort, insertion sort, selection sort, merge sort, and quick sort.",
+        "Sorting is important in many applications, such as searching, data analysis, and database management.",
+        "Sorting can be optimized by using different algorithms, such as merge sort, quick sort, and heap sort."
+      ],
+      "questions": [
+        {
+          "id": "bubble-sort",
+          "title": "Bubble Sort",
+          "difficulty": "Easy",
+          "status": "completed",
+          "platform": "leetcode",
+          "description": "Given an array of integers, write a function to sort the array in ascending order using the bubble sort algorithm.",
+          "intuition": "Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.",
+          "timeComplexity": "O(n^2)",
+          "spaceComplexity": "O(1)",
+          "intuitiveCode": "def bubbleSort(nums):\n    n = len(nums)\n    for i in range(n):\n        for j in range(0, n-i-1):\n            if nums[j] > nums[j+1]:\n                nums[j], nums[j+1] = nums[j+1], nums[j]",
+          "optimizedCode": "def bubbleSort(nums):\n    n = len(nums)\n    for i in range(n):\n        for j in range(0, n-i-1):\n            if nums[j] > nums[j+1]:\n                nums[j], nums[j+1] = nums[j+1], nums[j]"
+        },
+        {
+          "id": "insertion-sort",
+          "title": "Insertion Sort",
+          "difficulty": "Easy",
+          "status": "completed",
+          "platform": "leetcode",
+          "description": "Given an array of integers, write a function to sort the array in ascending order using the insertion sort algorithm.",
+          "intuition": "Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.",
+          "timeComplexity": "O(n^2)",
+          "spaceComplexity": "O(1)",
+          "intuitiveCode": "def insertionSort(nums):\n    n = len(nums)\n    for i in range(1, n):\n        key = nums[i]\n        j = i - 1\n        while j >= 0 and nums[j] > key:\n            nums[j+1] = nums[j]\n            j -= 1\n        nums[j+1] = key",
+          "optimizedCode": "def insertionSort(nums):\n    n = len(nums)\n    for i in range(1, n):\n        key = nums[i]\n        j = i - 1\n        while j >= 0 and nums[j] > key:\n            nums[j+1] = nums[j]\n            j -= 1\n        nums[j+1] = key"
+        },
+        {
+          "id": "selection-sort",
+          "title": "Selection Sort",
+          "difficulty": "Easy",
+          "status": "completed",
+          "platform": "leetcode",
+          "description": "Given an array of integers, write a function to sort the array in ascending order using the selection sort algorithm.",
+          "intuition": "Selection sort is a simple sorting algorithm that repeatedly finds the minimum element from the unsorted part of the array and puts it at the beginning. It is not as efficient as more advanced algorithms such as quicksort, heapsort, or merge sort.",
+          "timeComplexity": "O(n^2)",
+          "spaceComplexity": "O(1)",
+          "intuitiveCode": "def selectionSort(nums):\n    n = len(nums)\n    for i in range(n):\n        min_index = i\n        for j in range(i+1, n):\n            if nums[j] < nums[min_index]:\n                min_index = j\n        nums[i], nums[min_index] = nums[min_index], nums[i]",
+          "optimizedCode": "def selectionSort(nums):\n    n = len(nums)\n    for i in range(n):\n        min_index = i\n        for j in range(i+1, n):\n            if nums[j] < nums[min_index]:\n                min_index = j\n        nums[i], nums[min_index] = nums[min_index], nums[i]"
+        },
+        {
+          "id": "merge-sort",
+          "title": "Merge Sort",
+          "difficulty": "Easy",
+          "status": "completed",
+          "platform": "leetcode",
+          "description": "Given an array of integers, write a function to sort the array in ascending order using the merge sort algorithm.",
+          "testCases": [
+            {
+              "input": "nums = [5,2,3,1,4]",
+              "output": "[1,2,3,4,5]",
+              "explanation": "The input array is [5,2,3,1,4]. After sorting the array, the output should be [1,2,3,4,5]."
+            },
+            {
+              "input": "nums = [1,2,3,4,5]",
+              "output": "[1,2,3,4,5]",
+              "explanation": "The input array is [1,2,3,4,5]. After sorting the array, the output should be [1,2,3,4,5]."
+            }
+          ],
+          "intuition": "Merge sort is a divide and conquer algorithm that divides the input array into smaller subarrays, sorts them, and then merges them back together to produce the final sorted array.",
+          "timeComplexity": "O(n log n)",
+          "spaceComplexity": "O(n)",
+          "intuitiveCode": "def mergeSort(nums):\n    if len(nums) <= 1:\n        return nums\n    mid = len(nums) // 2\n    left = mergeSort(nums[:mid])\n    right = mergeSort(nums[mid:])\n    return merge(left, right)",
+          "optimizedCode": "def mergeSort(nums):\n    if len(nums) <= 1:\n        return nums\n    mid = len(nums) // 2\n    left = mergeSort(nums[:mid])\n    right = mergeSort(nums[mid:])\n    return merge(left, right)\n\ndef merge(left, right):\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    result.extend(left[i:])\n    result.extend(right[j:])\n    return result"
+        },
+        {
+          "id": "quick-sort",
+          "title": "Quick Sort",
+          "difficulty": "Easy",
+          "status": "completed",
+          "platform": "leetcode",
+          "description": "Given an array of integers, write a function to sort the array in ascending order using the quick sort algorithm.",
+          "testCases": [
+            {
+              "input": "nums = [5,2,3,1,4]",
+              "output": "[1,2,3,4,5]",
+              "explanation": "The input array is [5,2,3,1,4]. After sorting the array, the output should be [1,2,3,4,5]."
+            },
+            {
+              "input": "nums = [1,2,3,4,5]",
+              "output": "[1,2,3,4,5]",
+              "explanation": "The input array is [1,2,3,4,5]. After sorting the array, the output should be [1,2,3,4,5]."
+            }
+          ],
+          "intuition": "Quick sort is a divide and conquer algorithm that selects a pivot element from the array and partitions the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. It then recursively sorts the sub-arrays.",
+          "timeComplexity": "O(n log n)",
+          "spaceComplexity": "O(log n)",
+          "intuitiveCode": "def quickSort(nums):\n    if len(nums) <= 1:\n        return nums\n    pivot = nums[0]\n    left = [num for num in nums[1:] if num <= pivot]\n    right = [num for num in nums[1:] if num > pivot]\n    return quickSort(left) + [pivot] + quickSort(right)",
+          "optimizedCode": "def quickSort(nums):\n    if len(nums) <= 1:\n        return nums\n    pivot = nums[0]\n    left = [num for num in nums[1:] if num <= pivot]\n    right = [num for num in nums[1:] if num > pivot]\n    return quickSort(left) + [pivot] + quickSort(right)"
+        },
+        {
+          "id": "heap-sort",
+          "title": "Heap Sort",
+          "difficulty": "Easy",
+          "status": "completed",
+          "platform": "leetcode",
+          "description": "Given an array of integers, write a function to sort the array in ascending order using the heap sort algorithm.",
+          "testCases": [
+            {
+              "input": "nums = [5,2,3,1,4]",
+              "output": "[1,2,3,4,5]",
+              "explanation": "The input array is [5,2,3,1,4]. After sorting the array, the output should be [1,2,3,4,5]."
+            },
+            {
+              "input": "nums = [1,2,3,4,5]",
+              "output": "[1,2,3,4,5]",
+              "explanation": "The input array is [1,2,3,4,5]. After sorting the array, the output should be [1,2,3,4,5]."
+            }
+          ],
+          "intuition": "Heap sort is a comparison-based sorting algorithm that uses a binary heap data structure to sort elements. It is an efficient sorting algorithm with a time complexity of O(n log n).",
+          "timeComplexity": "O(n log n)",
+          "spaceComplexity": "O(1)",
+          "intuitiveCode": "def heapSort(nums):\n    n = len(nums)\n    for i in range(n // 2 - 1, -1, -1):\n        heapify(nums, n, i)\n    for i in range(n - 1, 0, -1):\n        nums[i], nums[0] = nums[0], nums[i]\n        heapify(nums, i, 0)\n\ndef heapify(nums, n, i):\n    largest = i\n    left = 2 * i + 1\n    right = 2 * i + 2\n    if left < n and nums[left] > nums[largest]:\n        largest = left\n    if right < n and nums[right] > nums[largest]:\n        largest = right\n    if largest != i:\n        nums[i], nums[largest] = nums[largest], nums[i]",
+          "optimizedCode": "def heapSort(nums):\n    n = len(nums)\n    for i in range(n // 2 - 1, -1, -1):\n        heapify(nums, n, i)\n    for i in range(n - 1, 0, -1):\n        nums[i], nums[0] = nums[0], nums[i]\n        heapify(nums, i, 0)\n\ndef heapify(nums, n, i):\n    largest = i\n    left = 2 * i + 1\n    right = 2 * i + 2\n    if left < n and nums[left] > nums[largest]:\n        largest = left\n    if right < n and nums[right] > nums[largest]:\n        largest = right\n    if largest != i:\n        nums[i], nums[largest] = nums[largest], nums[i]"
         }
       ]
     }

@@ -6,6 +6,8 @@ import Sidebar from "./components/Sidebar";
 import Dashboard from "./components/Dashboard";
 import LearnPage from "./components/LearnPage";
 import TopicPage from "./components/TopicPage";
+import TopicTutorialPage from "./components/TopicTutorialPage";
+import TutorialPage from "./components/TutorialPage";
 import PracticePage from "./components/PracticePage";
 
 function App() {
@@ -26,6 +28,14 @@ function App() {
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/learn" element={<LearnPage />} />
                 <Route path="/learn/:topicId" element={<TopicPage />} />
+                <Route
+                  path="/learn/:topicId/tutorial"
+                  element={<TopicTutorialPage />}
+                />
+                <Route
+                  path="/learn/:topicId/:questionId"
+                  element={<TutorialPage />}
+                />
                 <Route
                   path="/practice/:topicId/:questionId"
                   element={<PracticePage />}

@@ -7,7 +7,6 @@ const Sidebar = ({ isCompressed, setIsCompressed }) => {
 
   const navItems = [
     { path: "/", icon: FaHome, label: "Dashboard" },
-    { path: "/learn", icon: FaBook, label: "Learn" },
     { path: "/progress", icon: FaChartBar, label: "Progress" },
     { path: "/discussions", icon: FaComments, label: "Discussions" },
   ];
@@ -16,17 +15,27 @@ const Sidebar = ({ isCompressed, setIsCompressed }) => {
     <motion.div
       className={`bg-gray-800 text-gray-100 ${
         isCompressed ? "w-16" : "w-64"
-      } min-h-screen p-4 transition-all duration-300`}
+      } min-h-screen p-4 transition-all duration-500 relative`}
       initial={false}
       animate={{ width: isCompressed ? 64 : 256 }}
     >
+      {!isCompressed && (
+        <button
+          className="absolute top-4 right-4"
+          onClick={() => setIsCompressed(true)}
+        >
+          <FaBars size={24} />
+        </button>
+      )}
       <button
-        className="w-full flex justify-center items-center mb-8"
+        className={`absolute top-4 right-4 ${
+          isCompressed ? "block" : "hidden"
+        }`}
         onClick={() => setIsCompressed(!isCompressed)}
       >
         <FaBars size={24} />
       </button>
-      <nav>
+      <nav className="mt-8">
         <ul className="space-y-2">
           {navItems.map((item) => (
             <li key={item.path}>
@@ -38,7 +47,10 @@ const Sidebar = ({ isCompressed, setIsCompressed }) => {
                     : "hover:bg-gray-700"
                 }`}
               >
-                <item.icon className="mr-2" size={20} />
+                <item.icon
+                  className={`${isCompressed ? "mx-auto" : "mr-2"}`}
+                  size={24}
+                />
                 {!isCompressed && <span>{item.label}</span>}
               </Link>
             </li>

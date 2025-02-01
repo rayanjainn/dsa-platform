@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import topicsData from "../data.json";
-import ProgressRings from "./progressRings";
-import SortingVisualizer from "./sorting/SortingVisualizer";
 
-const Dashboard = () => {
+const Dashboard = (props) => {
+  const navigate = useNavigate();
+  const { isLoggedIn } = props;
+  if (!isLoggedIn) {
+    navigate("/signin");
+  }
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -12,7 +15,7 @@ const Dashboard = () => {
       exit={{ opacity: 0 }}
       className="container mx-auto"
     >
-      <h1 className="text-3xl font-bold mb-6">Welcome to DSA Mastery</h1>
+      <h1 className="text-3xl font-bold mb-6">Welcome to DSAlchemy</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {topicsData.topics.map((topic) => (
           <Link key={topic.id} to={`/learn/${topic.id}`}>

@@ -51,7 +51,7 @@ const DiscussionsPage = () => {
       (a, b) => b.upvotes - a.upvotes
     );
     setDiscussions(sortedDiscussions);
-  }, [discussions]); // Added discussions to the dependency array
+  }, []); // Added discussions to the dependency array
 
   const handleUpvote = (discussionId, commentId = null) => {
     setDiscussions((prevDiscussions) => {

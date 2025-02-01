@@ -11,12 +11,21 @@ import TutorialPage from "./components/TutorialPage";
 import PracticePage from "./components/PracticePage";
 import DiscussionsPage from "./components/Discussions";
 import Progress from "./components/Progress";
+import LoginPage from "./components/Signin";
 
 function App() {
   const [isSidebarCompressed, setIsSidebarCompressed] = useState(false);
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <Router>
+      <Routes>
+        <Route
+          path="/signin"
+          element={
+            <LoginPage isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+          }
+        />
+      </Routes>
       <div className="flex min-h-screen bg-gray-900 text-gray-100">
         <Sidebar
           isCompressed={isSidebarCompressed}
@@ -27,7 +36,10 @@ function App() {
           <main className="flex-1 overflow-y-auto p-6">
             <AnimatePresence mode="wait">
               <Routes>
-                <Route path="/" element={<Dashboard />} />
+                <Route
+                  path="/"
+                  element={<Dashboard isLoggedIn={isLoggedIn} />}
+                />
                 <Route path="/learn" element={<LearnPage />} />
                 <Route path="/learn/:topicId" element={<TopicPage />} />
                 <Route

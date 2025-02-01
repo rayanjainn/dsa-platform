@@ -1,0 +1,84 @@
+{
+  "topics": [
+    {
+      "id": "arrays",
+      "name": "Arrays",
+      "progress": 60,
+      "questions": [
+        {
+          "id": "two-sum",
+          "title": "Two Sum",
+          "difficulty": "Easy",
+          "status": "completed"
+        },
+        {
+          "id": "best-time-to-buy-and-sell-stock",
+          "title": "Best Time to Buy and Sell Stock",
+          "difficulty": "Easy",
+          "status": "completed"
+        },
+        {
+          "id": "contains-duplicate",
+          "title": "Contains Duplicate",
+          "difficulty": "Easy",
+          "status": "not-attempted"
+        },
+        {
+          "id": "product-of-array-except-self",
+          "title": "Product of Array Except Self",
+          "difficulty": "Medium",
+          "status": "attempted"
+        },
+        {
+          "id": "maximum-subarray",
+          "title": "Maximum Subarray",
+          "difficulty": "Medium",
+          "status": "not-attempted"
+        },
+        {
+          "id": "minimum-window-substring",
+          "title": "Minimum Window Substring",
+          "difficulty": "Hard",
+          "status": "not-attempted"
+        }
+      ]
+    },
+    {
+      "id": "trees",
+      "name": "Trees",
+      "progress": 30,
+      "questions": [
+        {
+          "id": "maximum-depth-of-binary-tree",
+          "title": "Maximum Depth of Binary Tree",
+          "difficulty": "Easy",
+          "status": "completed"
+        },
+        {
+          "id": "same-tree",
+          "title": "Same Tree",
+          "difficulty": "Easy",
+          "status": "not-attempted"
+        },
+        {
+          "id": "binary-tree-level-order-traversal",
+          "title": "Binary Tree Level Order Traversal",
+          "difficulty": "Medium",
+          "status": "attempted"
+        },
+        {
+          "id": "construct-binary-tree-from-preorder-and-inorder-traversal",
+          "title": "Construct Binary Tree from Preorder and Inorder Traversal",
+          "difficulty": "Medium",
+          "status": "not-attempted"
+        },
+        {
+          "id": "binary-tree-maximum-path-sum",
+          "title": "Binary Tree Maximum Path Sum",
+          "difficulty": "Hard",
+          "status": "not-attempted"
+        }
+      ]
+    }
+  ]
+}

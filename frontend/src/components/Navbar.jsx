@@ -1,19 +1,13 @@
-import { Link } from "react-router-dom";
-import { FaCode, FaUser } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-800 text-white p-4">
+    <nav className="bg-gray-800 text-white p-4 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-xl font-bold flex items-center">
-          <FaCode className="mr-2" />
-          DSA Mastery
-        </Link>
+        <h1 className="text-xl font-bold">DSA Mastery</h1>
         <div className="flex items-center">
-          <Link to="/profile" className="flex items-center">
-            <FaUser className="mr-2" />
-            Profile
-          </Link>
+          <FaUser className="mr-2" />
+          <span>Profile</span>
         </div>
       </div>
     </nav>

@@ -75,7 +75,7 @@ export default function LoginPage(props) {
           <button
             onClick={() => {
               setIsLoggedIn(true);
-              navigate("/");
+              navigate("/dashboard");
             }}
             type="submit"
             className="w-full py-3 px-4 bg-cyan-500 hover:bg-cyan-400 text-white rounded-lg

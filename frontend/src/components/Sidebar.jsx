@@ -6,7 +6,7 @@ const Sidebar = ({ isCompressed, setIsCompressed }) => {
   const location = useLocation();
 
   const navItems = [
-    { path: "/", icon: FaHome, label: "Dashboard" },
+    { path: "/dashboard", icon: FaHome, label: "Dashboard" },
     { path: "/progress", icon: FaChartBar, label: "Progress" },
     { path: "/discussions", icon: FaComments, label: "Discussions" },
   ];

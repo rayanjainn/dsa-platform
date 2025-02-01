@@ -20,7 +20,7 @@ function App() {
     <Router>
       <Routes>
         <Route
-          path="/signin"
+          path="/"
           element={
             <LoginPage isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
           }
@@ -37,7 +37,7 @@ function App() {
             <AnimatePresence mode="wait">
               <Routes>
                 <Route
-                  path="/"
+                  path="/dashboard"
                   element={<Dashboard isLoggedIn={isLoggedIn} />}
                 />
                 <Route path="/learn" element={<LearnPage />} />

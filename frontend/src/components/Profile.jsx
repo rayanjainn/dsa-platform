@@ -9,7 +9,7 @@ export default function Profile() {
             <PersonIcon className="w-12 h-12 text-gray-800" />
           </div>
           <div>
-            <h2 className="text-2xl font-bold">John Doe</h2>
+            <h2 className="text-2xl font-bold">Rayan Jain</h2>
             <p className="text-gray-400">Level 42 | Rank: #123</p>
           </div>
         </div>
